@@ -10,7 +10,7 @@ public class TransferProsesFactory implements IProcessFactory{
 	@Override
 	public ProcessCall newProcessInstance(String className) {
 		
-		if(className.equals("com.rise.processes.TransferProcess"))
+		if(className.equals("com.rise.processes.transferprocess"))
 			return new TransferProcess();
 		return null;
 	}
