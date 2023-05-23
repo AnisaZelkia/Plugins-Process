@@ -14,7 +14,7 @@
  * ComPiere, Inc., 2620 Augustine Dr. #245, Santa Clara, CA 95054, USA        *
  * or via info@compiere.org or http://www.compiere.org/license.html           *
  *****************************************************************************/
-package com.rise.processes;
+package com.rise.model;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -43,21 +43,6 @@ public interface I_RED_Asset_Transfer
 
     /** Load Meta Data */
 
-    /** Column name A_Asset_ID */
-    public static final String COLUMNNAME_A_Asset_ID = "A_Asset_ID";
-
-	/** Set Asset.
-	  * Asset used internally or by customers
-	  */
-	public void setA_Asset_ID (int A_Asset_ID);
-
-	/** Get Asset.
-	  * Asset used internally or by customers
-	  */
-	public int getA_Asset_ID();
-
-	public org.compiere.model.I_A_Asset getA_Asset() throws RuntimeException;
-
     /** Column name AD_Client_ID */
     public static final String COLUMNNAME_AD_Client_ID = "AD_Client_ID";
 
@@ -78,6 +63,36 @@ public interface I_RED_Asset_Transfer
 	  * Organizational entity within tenant
 	  */
 	public int getAD_Org_ID();
+
+    /** Column name C_DocType_ID */
+    public static final String COLUMNNAME_C_DocType_ID = "C_DocType_ID";
+
+	/** Set Document Type.
+	  * Document type or rules
+	  */
+	public void setC_DocType_ID (int C_DocType_ID);
+
+	/** Get Document Type.
+	  * Document type or rules
+	  */
+	public int getC_DocType_ID();
+
+	public org.compiere.model.I_C_DocType getC_DocType() throws RuntimeException;
+
+    /** Column name C_DocTypeTarget_ID */
+    public static final String COLUMNNAME_C_DocTypeTarget_ID = "C_DocTypeTarget_ID";
+
+	/** Set Target Document Type.
+	  * Target document type for conversing documents
+	  */
+	public void setC_DocTypeTarget_ID (int C_DocTypeTarget_ID);
+
+	/** Get Target Document Type.
+	  * Target document type for conversing documents
+	  */
+	public int getC_DocTypeTarget_ID();
+
+	public org.compiere.model.I_C_DocType getC_DocTypeTarget() throws RuntimeException;
 
     /** Column name Created */
     public static final String COLUMNNAME_Created = "Created";
@@ -108,6 +123,45 @@ public interface I_RED_Asset_Transfer
 	  */
 	public String getDescription();
 
+    /** Column name DocAction */
+    public static final String COLUMNNAME_DocAction = "DocAction";
+
+	/** Set Document Action.
+	  * The targeted status of the document
+	  */
+	public void setDocAction (String DocAction);
+
+	/** Get Document Action.
+	  * The targeted status of the document
+	  */
+	public String getDocAction();
+
+    /** Column name DocStatus */
+    public static final String COLUMNNAME_DocStatus = "DocStatus";
+
+	/** Set Document Status.
+	  * The current status of the document
+	  */
+	public void setDocStatus (String DocStatus);
+
+	/** Get Document Status.
+	  * The current status of the document
+	  */
+	public String getDocStatus();
+
+    /** Column name DocumentNo */
+    public static final String COLUMNNAME_DocumentNo = "DocumentNo";
+
+	/** Set Document No.
+	  * Document sequence number of the document
+	  */
+	public void setDocumentNo (String DocumentNo);
+
+	/** Get Document No.
+	  * Document sequence number of the document
+	  */
+	public String getDocumentNo();
+
     /** Column name Help */
     public static final String COLUMNNAME_Help = "Help";
 
@@ -134,48 +188,53 @@ public interface I_RED_Asset_Transfer
 	  */
 	public boolean isActive();
 
-    /** Column name M_Locator_ID */
-    public static final String COLUMNNAME_M_Locator_ID = "M_Locator_ID";
+    /** Column name IsApproved */
+    public static final String COLUMNNAME_IsApproved = "IsApproved";
 
-	/** Set Locator.
-	  * Warehouse Locator
+	/** Set Approved.
+	  * Indicates if this document requires approval
 	  */
-	public void setM_Locator_ID (int M_Locator_ID);
+	public void setIsApproved (boolean IsApproved);
 
-	/** Get Locator.
-	  * Warehouse Locator
+	/** Get Approved.
+	  * Indicates if this document requires approval
 	  */
-	public int getM_Locator_ID();
+	public boolean isApproved();
 
-	public I_M_Locator getM_Locator() throws RuntimeException;
+    /** Column name Processed */
+    public static final String COLUMNNAME_Processed = "Processed";
 
-    /** Column name M_LocatorTo_ID */
-    public static final String COLUMNNAME_M_LocatorTo_ID = "M_LocatorTo_ID";
-
-	/** Set Locator To.
-	  * Location inventory is moved to
+	/** Set Processed.
+	  * The document has been processed
 	  */
-	public void setM_LocatorTo_ID (int M_LocatorTo_ID);
+	public void setProcessed (boolean Processed);
 
-	/** Get Locator To.
-	  * Location inventory is moved to
+	/** Get Processed.
+	  * The document has been processed
 	  */
-	public int getM_LocatorTo_ID();
+	public boolean isProcessed();
 
-	public I_M_Locator getM_LocatorTo() throws RuntimeException;
+    /** Column name ProcessedOn */
+    public static final String COLUMNNAME_ProcessedOn = "ProcessedOn";
 
-    /** Column name Name */
-    public static final String COLUMNNAME_Name = "Name";
-
-	/** Set Name.
-	  * Alphanumeric identifier of the entity
+	/** Set Processed On.
+	  * The date+time (expressed in decimal format) when the document has been processed
 	  */
-	public void setName (String Name);
+	public void setProcessedOn (BigDecimal ProcessedOn);
 
-	/** Get Name.
-	  * Alphanumeric identifier of the entity
+	/** Get Processed On.
+	  * The date+time (expressed in decimal format) when the document has been processed
 	  */
-	public String getName();
+	public BigDecimal getProcessedOn();
+
+    /** Column name Processing */
+    public static final String COLUMNNAME_Processing = "Processing";
+
+	/** Set Process Now	  */
+	public void setProcessing (boolean Processing);
+
+	/** Get Process Now	  */
+	public boolean isProcessing();
 
     /** Column name RED_Asset_Transfer_ID */
     public static final String COLUMNNAME_RED_Asset_Transfer_ID = "RED_Asset_Transfer_ID";

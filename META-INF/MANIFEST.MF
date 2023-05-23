@@ -1,10 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Transferprocess
-Bundle-SymbolicName: com.rise.transferprocess
+Bundle-SymbolicName: com.rise.assettransfer
 Bundle-Version: 1.0.0.qualifier
-Automatic-Module-Name: org.red.transferprocess
+Automatic-Module-Name: com.rise.assettransfer
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.adempiere.base;bundle-version="10.0.0",
  org.adempiere.plugin.utils;bundle-version="10.0.0"
-Service-Component: ProcessFactory.xml
+Service-Component: ProcessFactory.xml,
+ ModelFactory.xml,
+ DocumentFactory.xml
