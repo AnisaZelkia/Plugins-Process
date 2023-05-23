@@ -33,7 +33,7 @@ public class X_RED_Asset_Transfer extends PO implements I_RED_Asset_Transfer, I_
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 20230522L;
+	private static final long serialVersionUID = 20230523L;
 
     /** Standard Constructor */
     public X_RED_Asset_Transfer (Properties ctx, int RED_Asset_Transfer_ID, String trxName)
